@@ -12,12 +12,13 @@ export default function EditTopics({title,desc,id}) {
   const[newDesc,setNewDesc] = useState(desc)
   const route = useRouter()
 
+  
 
   const handleSubmit = async (e) =>{
     e.preventDefault()
 
     try {
-      const res = await fetch(`http://localhost:3000/api/topics/${id}`,{
+      const res = await fetch(`/api/topics/${id}`,{
         method:'PUT',
         headers:{
           "Content-Type":"application/json",
